@@ -1,7 +1,7 @@
 {
   "name": "field-descriptions",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Make key-value data easier to display in discord embeds",
   "main": "lib/index.js",
   "types": "lib",
   "scripts": {

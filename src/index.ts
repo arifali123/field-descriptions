@@ -56,7 +56,9 @@ export function FD(
   const { separator, nameEdits, valueEdits } = options;
   return values
     .map(({ name, value }) => {
-      return GenMD(name, nameEdits) + separator + GenMD(value, valueEdits);
+      return (
+        GenMD(name, nameEdits) + separator + " " + GenMD(value, valueEdits)
+      );
     })
     .join("\n");
 }

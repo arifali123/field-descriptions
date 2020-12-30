@@ -48,7 +48,6 @@ function GenMD(
 export function FD(
   values: FDobject[],
   options: FDoptions = {
-    separator: ": ",
     nameEdits: GenMDOptionsDefault,
     valueEdits: GenMDOptionsDefault,
   }
@@ -57,7 +56,10 @@ export function FD(
   return values
     .map(({ name, value }) => {
       return (
-        GenMD(name, nameEdits) + separator + " " + GenMD(value, valueEdits)
+        GenMD(name, nameEdits) +
+        (separator ? separator : ":") +
+        " " +
+        GenMD(value, valueEdits)
       );
     })
     .join("\n");

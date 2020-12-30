@@ -1,11 +1,12 @@
 {
   "name": "field-descriptions",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Make key-value data easier to display in discord embeds",
   "main": "lib/index.js",
   "types": "lib",
   "scripts": {
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "example": "ts-node-dev examples/webhook.ts"
   },
   "keywords": [],
   "repository": {
@@ -20,6 +21,8 @@
   "license": "MIT",
   "devDependencies": {
     "@types/lodash": "^4.14.165",
+    "discord-webhook-node": "^1.1.8",
+    "ts-node-dev": "^1.1.1",
     "typescript": "^4.1.2"
   },
   "dependencies": {

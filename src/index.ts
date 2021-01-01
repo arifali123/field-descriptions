@@ -33,7 +33,7 @@ export interface GenMDOptions {
   italic?: boolean;
   bold?: boolean;
 }
-function GenMD(
+export function GenMD(
   text: string,
   options: GenMDOptions = GenMDOptionsDefault
 ): string {

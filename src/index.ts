@@ -1,4 +1,3 @@
-import { pickBy, keys } from "lodash";
 const underline = "__";
 const strikethrough = "~~";
 const italic = "*";
@@ -37,14 +36,20 @@ export function GenMD(
   text: string,
   options: GenMDOptions = GenMDOptionsDefault
 ): string {
-  const sep = keys(pickBy(options))
-    .map((value) => {
-      return edits[value];
-    })
+  const sep = Object.keys(pickBy(options))
+    .map((value) => edits[value])
     .join("");
   return sep + text + reverseString(sep);
 }
-
+function pickBy(object: Record<string, any>) {
+  const obj: Record<string, any> = {};
+  for (const key in object) {
+    if (object[key]) {
+      obj[key] = object[key];
+    }
+  }
+  return obj;
+}
 export function FD(
   values: FDobject[],
   options: FDoptions = {
